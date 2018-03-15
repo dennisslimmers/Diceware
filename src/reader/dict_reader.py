@@ -17,16 +17,6 @@ class DictReader:
             max = 5
 
             for i in range(0, max):
-                print(self.words[i])
+                print(self.words[i][1])
 
-class DictWord:
-    def __init__(self, text, id=0):
-        self.__id = id
-        self.__text = text
-    
-    def text(self):
-        return self.__text
-
-    def id(self):
-        return self.id
 
