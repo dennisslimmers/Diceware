@@ -16,7 +16,7 @@ class ArgsParser:
     def map_generator_option(self, arg):
         if (arg == "/e"): # /e will double encrypt the chosen word for more security (but less user friendly!)
             self.generator_options.append("encrypt")
-        elif (arg == "/r"): # /s seperates the words with an underscore (_)
+        elif (arg == "/s"): # /s seperates the words with an underscore (_)
             self.generator_options.append("random_seperators")
         else:
             print(arg + " is not a valid argument!")

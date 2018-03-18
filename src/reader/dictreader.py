@@ -27,4 +27,7 @@ class DictReader:
 
                 counter = counter + 1
 
+    def look_up(self, key):
+        return self.words.get(key)
+
 
