@@ -6,4 +6,4 @@ argsparser = ArgsParser(sys.argv)
 options = argsparser.get_generator_options()
 
 reader = DictReader()
-reader.preview()
+reader.preview(1000)
