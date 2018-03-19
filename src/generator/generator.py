@@ -22,7 +22,12 @@ class Generator:
                 key += str(self.random())
 
             word = self.dictreader.look_up(key)
-            passphrase += word
+
+            # If the -s argument is provided, add dashes between every generated word
+            if self.options.get("-s") == True:
+                passphrase += ("-" if i != 0 else "") + word
+            else:
+                passphrase += word
 
         return passphrase        
 
@@ -31,11 +36,3 @@ class Generator:
 
         # Generate a cryptosafe number between 1 and 6
         return cryptogen.randrange(1, 6) 
-
-
-        
-
-
-
-        
-
