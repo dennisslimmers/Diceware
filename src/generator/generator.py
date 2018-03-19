@@ -29,8 +29,8 @@ class Generator:
             else:
                 passphrase += word
 
-        # If the -e argument is provided, encrypt the passphrase with AES
-        return self.hash(passphrase) if self.options.get("-e") == True else passphrase        
+        # If the -e argument is provided, hash the passphrase with Bcrypt
+        return self.hash(passphrase) if self.options.get("-h") == True else passphrase        
 
     def random(self):
         cryptogen = SystemRandom()

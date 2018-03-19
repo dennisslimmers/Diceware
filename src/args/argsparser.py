@@ -3,11 +3,11 @@ import os, sys
 class ArgsParser:
     def __init__(self, args):
         self.generator_options = {
-            "-e": False,
+            "-h": False,
             "-s": False,
         }
 
-        self.valid_commands = ["-e", "-s"]
+        self.valid_commands = ["-h", "-s"]
         self.__args = args
         self.parse_args()
 
@@ -20,8 +20,8 @@ class ArgsParser:
             
     def map_generator_option(self, arg):
         if self.is_valid_argument(arg):
-            if (arg == "-e"): # -e will hash the generated passphrase for more security (but less user friendly!)
-                self.generator_options.update({ "-e": True })
+            if (arg == "-h"): # -h will hash the generated passphrase for more security (but less user friendly!)
+                self.generator_options.update({ "-h": True })
             elif (arg == "-s"): # -s seperates the words with dashes (-)
                 self.generator_options.update({ "-s": True })
         else:
