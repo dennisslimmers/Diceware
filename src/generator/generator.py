@@ -10,7 +10,7 @@ class Generator:
     
     def generate_passphrase(self):
         '''
-        So for each word we need to generate 5 cryptosafe random numbers. These numbers 
+        So for each word we need to generate 5 cryptosafe random numbers between 1 and 6. These numbers 
         concatinated create the key that corresponds with the word in the dictionary, 
         for example: 4 - 5 - 1 - 2 - 6 = 45126 = hemels. These words essentially form the passphrase
         '''
