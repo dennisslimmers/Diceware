@@ -7,7 +7,7 @@ class ArgsParser:
             "-s": False,
         }
 
-        self.valid_commands = ["-h", "-s"]
+        self.valid_commands = ["-h", "-s", "--help"]
         self.__args = args
         self.parse_args()
 
@@ -16,6 +16,10 @@ class ArgsParser:
             if i == 0:
                 continue # The first arg is always the execution file, so skip it 
             else:
+                if (self.__args[i] == "--help"):
+                    self.show_help()
+                    exit(0)
+
                 self.map_generator_option(self.__args[i])
             
     def map_generator_option(self, arg):
@@ -36,4 +40,15 @@ class ArgsParser:
 
     def get_generator_options(self):
         return self.generator_options
+
+    def show_help(self):
+        help_msg = """Diceware passphrase generator
+        
+arguments: 
+    --help       shows argument list and exits
+    --version    shows application version and exits
+    -h           hashes the generated passphrase with bcrypt
+    -s           seperates the words with dashes (-)"""
+
+        print(help_msg)
                 
