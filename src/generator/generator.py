@@ -1,4 +1,4 @@
-import os, sys, random
+import os, sys, bcrypt
 from random import SystemRandom
 from reader.dictreader import DictReader
 
@@ -29,10 +29,18 @@ class Generator:
             else:
                 passphrase += word
 
-        return passphrase        
+        # If the -e argument is provided, encrypt the passphrase with AES
+        return self.hash(passphrase) if self.options.get("-e") == True else passphrase        
 
     def random(self):
         cryptogen = SystemRandom()
 
         # Generate a cryptosafe number between 1 and 6
         return cryptogen.randrange(1, 6) 
+
+    def hash(self, passphrase):
+        # Hash the passphrase with bcrypt
+        return bcrypt.hashpw(passphrase, bcrypt.gensalt())
+
+
+

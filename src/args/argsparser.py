@@ -11,16 +11,16 @@ class ArgsParser:
         self.__args = args
         self.parse_args()
 
-    def parse_args(self)
+    def parse_args(self):
         for i in range(0, len(self.__args)):
-            if i == 0:t 
+            if i == 0:
                 continue # The first arg is always the execution file, so skip it 
             else:
                 self.map_generator_option(self.__args[i])
             
     def map_generator_option(self, arg):
         if self.is_valid_argument(arg):
-            if (arg == "-e"): # -e will encrypt the generated passphrase for more security (but less user friendly!)
+            if (arg == "-e"): # -e will hash the generated passphrase for more security (but less user friendly!)
                 self.generator_options.update({ "-e": True })
             elif (arg == "-s"): # -s seperates the words with dashes (-)
                 self.generator_options.update({ "-s": True })
