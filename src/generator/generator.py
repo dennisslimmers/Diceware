@@ -40,7 +40,7 @@ class Generator:
 
     def hash(self, passphrase):
         # Hash the passphrase with bcrypt
-        return bcrypt.hashpw(passphrase, bcrypt.gensalt())
+        return bcrypt.hashpw(passphrase.encode("utf-8"), bcrypt.gensalt())
 
 
 
