@@ -24,13 +24,18 @@ class Generator:
             word = self.dictreader.look_up(key)
 
             # If the -s argument is provided, add dashes between every generated word
-            if self.options.get("-s") == True:
+            if self.options.get("-s"):
                 passphrase += ("-" if i != 0 else "") + word
             else:
                 passphrase += word
 
+        # If the -u argument is provided, capitalize the passphrase
+        passphrase = passphrase.upper() if self.options.get("-u") else passphrase
+
         # If the -e argument is provided, hash the passphrase with Bcrypt
-        return self.hash(passphrase) if self.options.get("-h") == True else passphrase        
+        passphrase = self.hash(passphrase) if self.options.get("-h") else passphrase 
+
+        return passphrase        
 
     def random(self):
         cryptogen = SystemRandom()

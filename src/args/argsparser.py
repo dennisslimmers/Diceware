@@ -5,9 +5,10 @@ class ArgsParser:
         self.generator_options = {
             "-h": False,
             "-s": False,
+            "-u": False,
         }
 
-        self.valid_commands = ["-h", "-s", "--help"]
+        self.valid_commands = ["-h", "-s", "-u", "--help"]
         self.__args = args
         self.parse_args()
 
@@ -28,8 +29,10 @@ class ArgsParser:
                 self.generator_options.update({ "-h": True })
             elif (arg == "-s"): # -s seperates the words with dashes (-)
                 self.generator_options.update({ "-s": True })
+            elif (arg == "-u"): # -u capitalizes the words
+                self.generator_options.update({ "-u": True })
         else:
-            print(arg + " is not a valid argument!")
+            print(arg + " is not a valid argument, type --help for more information")
             exit(0)
 
     def is_valid_argument(self, arg):
@@ -48,7 +51,8 @@ arguments:
     --help       shows argument list and exits
     --version    shows application version and exits
     -h           hashes the generated passphrase with bcrypt
-    -s           seperates the words with dashes (-)"""
+    -s           seperates the words with dashes (-)
+    -u           capitalizes the passphrase"""
 
         print(help_msg)
                 
