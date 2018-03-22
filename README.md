@@ -11,7 +11,7 @@ dutjegroetjochiecicontraalias
 
 # Optional arguments
 
-With the _--help_ command you can see every optional argument you can provide to generate different outcomes.
+With the _--help_ command you can see every optional argument that can be provided to generate different outcomes.
 
 ```bash
 $ python diceware.py --help
