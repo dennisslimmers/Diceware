@@ -6,10 +6,11 @@ class ArgsParser:
             "-h": False,
             "-s": False,
             "-u": False,
+            "-log": False,
             "-n": 6
         }
 
-        self.valid_commands = ["-h", "-s", "-u", "-n", "--help"]
+        self.valid_commands = ["-h", "-s", "-u", "-n", "-log", "--help"]
         self.__args = args
         self.parse_args()
 
@@ -33,6 +34,8 @@ class ArgsParser:
                 self.generator_options.update({ "-s": True })
             elif (arg == "-u"): # -u capitalizes the words
                 self.generator_options.update({ "-u": True })
+            elif (arg == "-log"): # -log logs the generated passphrase to a log file located in the logs folder
+                self.generator_options.update({ "-log": True })
             elif (arg == "-n"): # number of words (dice rolls)
                 try:
                     num = int(self.__args[(i + 1)])
@@ -64,7 +67,8 @@ arguments:
     -h           hashes the generated passphrase with bcrypt
     -s           seperates the words with dashes (-)
     -u           capitalizes the passphrase
-    -n INT       amount of dice rolls (words)"""
+    -n INT       amount of dice rolls (words)
+    -log         log the passphrase to a log file"""
 
         print(help_msg)
                 
