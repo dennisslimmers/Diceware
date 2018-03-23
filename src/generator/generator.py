@@ -3,9 +3,9 @@ from random import SystemRandom
 from reader.dictreader import DictReader
 
 class Generator:
-    def __init__(self, options, dice_rolls, dictreader):
+    def __init__(self, options, dictreader):
         self.options = options
-        self.dice_rolls = dice_rolls
+        self.dice_rolls = options.get("-n")
         self.dictreader = dictreader
     
     def generate_passphrase(self):

@@ -6,9 +6,10 @@ class ArgsParser:
             "-h": False,
             "-s": False,
             "-u": False,
+            "-n": 6
         }
 
-        self.valid_commands = ["-h", "-s", "-u", "--help"]
+        self.valid_commands = ["-h", "-s", "-u", "-n", "--help"]
         self.__args = args
         self.parse_args()
 
@@ -21,9 +22,10 @@ class ArgsParser:
                     self.show_help()
                     exit(0)
 
-                self.map_generator_option(self.__args[i])
+                if (self.__args[i].startswith("-")):
+                    self.map_generator_option(self.__args[i], i)
             
-    def map_generator_option(self, arg):
+    def map_generator_option(self, arg, i):
         if self.is_valid_argument(arg):
             if (arg == "-h"): # -h will hash the generated passphrase for more security (but less user friendly!)
                 self.generator_options.update({ "-h": True })
@@ -31,6 +33,15 @@ class ArgsParser:
                 self.generator_options.update({ "-s": True })
             elif (arg == "-u"): # -u capitalizes the words
                 self.generator_options.update({ "-u": True })
+            elif (arg == "-n"): # number of words (dice rolls)
+                try:
+                    num = int(self.__args[(i + 1)])
+                except:
+                    e = sys.exc_info()[0]
+                    print(e)
+                    exit(0)
+                
+                self.generator_options.update({ "-n": num })
         else:
             print(arg + " is not a valid argument, type --help for more information")
             exit(0)
@@ -52,7 +63,8 @@ arguments:
     --version    shows application version and exits
     -h           hashes the generated passphrase with bcrypt
     -s           seperates the words with dashes (-)
-    -u           capitalizes the passphrase"""
+    -u           capitalizes the passphrase
+    -n INT       amount of dice rolls (words)"""
 
         print(help_msg)
                 

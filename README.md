@@ -23,4 +23,5 @@ arguments:
     -h           hashes the generated passphrase with bcrypt
     -s           seperates the words with dashes (-)
     -u           capitalizes the passphrase
+    -n INT       amount of dice rolls (words)
 ```

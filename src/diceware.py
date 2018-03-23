@@ -8,5 +8,5 @@ options = argsparser.get_generator_options()
 
 reader = DictReader()
 
-gen = Generator(options, 6, reader)
+gen = Generator(options, reader)
 print(gen.generate_passphrase())
