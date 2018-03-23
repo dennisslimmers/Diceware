@@ -6,7 +6,11 @@ This python implementation of diceware uses _secrets.SystemRandom_ to generate c
 
 ```bash
 $ python diceware.py
-dutjegroetjochiecicontraalias
+Started generating at: 2018-03-23 21:36:56.233123
+Finished generating at: 2018-03-23 21:36:56.233123
+Elapsed generation time: 0.000487s
+
+Passphrase: fissenkespendelengullenklankcharge
 ```  
 
 # Optional arguments
@@ -24,4 +28,5 @@ arguments:
     -s           seperates the words with dashes (-)
     -u           capitalizes the passphrase
     -n INT       amount of dice rolls (words)
+    -log         log the passphrase to a log file
 ```
