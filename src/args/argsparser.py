@@ -7,10 +7,11 @@ class ArgsParser:
             "-s": False,
             "-u": False,
             "-log": False,
-            "-n": 6
+            "-n": 6,
+            "-l": "EN"
         }
 
-        self.valid_commands = ["-h", "-s", "-u", "-n", "-log", "--help"]
+        self.valid_commands = ["-h", "-s", "-u", "-n", "-l", "-log", "--help"]
         self.__args = args
         self.parse_args()
 
@@ -45,6 +46,15 @@ class ArgsParser:
                     exit(0)
                 
                 self.generator_options.update({ "-n": num })
+            elif (arg == "-l"): # dictionary language
+                try:
+                    lang = self.__args[(i + 1)]
+                except:
+                    e = sys.exc_info()[0]
+                    print(e)
+                    exit(0)
+                
+                self.generator_options.update({ "-l": lang })
         else:
             print(arg + " is not a valid argument, type --help for more information")
             exit(0)
@@ -68,6 +78,7 @@ arguments:
     -s           seperates the words with dashes (-)
     -u           capitalizes the passphrase
     -n INT       amount of dice rolls (words)
+    -l [NL, EN]  dictionary language
     -log         log the passphrase to a log file"""
 
         print(help_msg)

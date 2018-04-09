@@ -28,5 +28,6 @@ arguments:
     -s           seperates the words with dashes (-)
     -u           capitalizes the passphrase
     -n INT       amount of dice rolls (words)
+    -l [NL, EN]  dictionary language
     -log         log the passphrase to a log file
 ```

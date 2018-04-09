@@ -11,7 +11,7 @@ def log(logger, datetime, passphrase):
 def init():
     argsparser = ArgsParser(sys.argv)
     options = argsparser.get_generator_options()
-    reader = DictReader()
+    reader = DictReader(options)
 
     timer = Timer()
     timer.start()
