@@ -6,11 +6,11 @@ This python implementation of diceware uses _secrets.SystemRandom_ to generate c
 
 ```bash
 $ python diceware.py
-Started generating at: 2018-03-23 21:36:56.233123
-Finished generating at: 2018-03-23 21:36:56.233123
-Elapsed generation time: 0.000487s
+Started generating at: 2018-04-09 20:59:01.305850
+Finished generating at: 2018-04-09 20:59:01.306351
+Elapsed generation time: 0.001173s
 
-Passphrase: fissenkespendelengullenklankcharge
+Passphrase: Aussiedeckkaternboottebasakelei
 ```  
 
 # Optional arguments
