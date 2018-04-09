@@ -5,7 +5,10 @@ from generator.generator import Generator
 from logging.timer import Timer
 from logging.logger import Logger
 
-def main():
+def log(logger, datetime, passphrase):
+    logger.write(datetime, passphrase)
+
+def init():
     argsparser = ArgsParser(sys.argv)
     options = argsparser.get_generator_options()
     reader = DictReader()
@@ -24,9 +27,7 @@ def main():
     if (options.get("-log")):
         logger = Logger()
         log(logger, datetime.datetime.now(), passphrase)
+        
 
-def log(logger, datetime, passphrase):
-    logger.write(datetime, passphrase)
-
-
-main() # Initialise 
+if (__name__ == "__main__"):
+    init() # Initialise 
