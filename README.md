@@ -6,6 +6,12 @@ This python implementation of diceware uses _secrets.SystemRandom_ to generate c
 
 ```bash
 $ python diceware.py
+    ____  _                                 
+   / __ \(_)_______ _      ______ _________ 
+  / / / / / ___/ _ \ | /| / / __ `/ ___/ _ \
+ / /_/ / / /__/  __/ |/ |/ / /_/ / /  /  __/
+/_____/_/\___/\___/|__/|__/\__,_/_/   \___/
+
 Started generating at: 2018-04-09 20:59:01.305850
 Finished generating at: 2018-04-09 20:59:01.306351
 Elapsed generation time: 0.001173s

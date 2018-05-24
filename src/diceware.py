@@ -19,6 +19,14 @@ def init():
     gen = Generator(options, reader)
     passphrase = gen.generate_passphrase()
 
+    print('''
+     ____  _                                 
+    / __ \(_)_______ _      ______ _________ 
+   / / / / / ___/ _ \ | /| / / __ `/ ___/ _ \\
+  / /_/ / / /__/  __/ |/ |/ / /_/ / /  /  __/
+ /_____/_/\___/\___/|__/|__/\__,_/_/   \___/
+    ''')
+
     print("Started generating at: " + str(timer.start))
     print(timer.stop())
     print(timer.elapsed())
@@ -27,7 +35,7 @@ def init():
     if (options.get("-log")):
         logger = Logger()
         log(logger, datetime.datetime.now(), passphrase)
-        
+
 
 if (__name__ == "__main__"):
     init() # Initialise 
