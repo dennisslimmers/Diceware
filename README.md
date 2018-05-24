@@ -4,7 +4,7 @@ _Diceware_ is a password generator that uses a word dictionary to create solid p
 
 This python implementation of diceware uses _secrets.SystemRandom_ to generate cryptosafe numbers. So the certainty of your randomness heavily depends on your source of random. 
 
-```bash
+```
 $ python diceware.py
     ____  _                                 
    / __ \(_)_______ _      ______ _________ 
