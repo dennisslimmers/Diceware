@@ -8,7 +8,8 @@ class ArgsParser:
             "-u": False,
             "-log": False,
             "-n": 6,
-            "-l": "EN"
+            "-l": "EN",
+            "--version": "Diceware v0.1"
         }
 
         self.valid_commands = ["-h", "-s", "-u", "-n", "-l", "-log", "--help"]
@@ -23,7 +24,10 @@ class ArgsParser:
                 if (self.__args[i] == "--help"):
                     self.show_help()
                     exit(0)
-
+                elif (self.__args[i] == "--version"): # print the application version
+                    print(self.generator_options.get("--version"))
+                    exit(0)
+                    
                 if (self.__args[i].startswith("-")):
                     self.map_generator_option(self.__args[i], i)
             
