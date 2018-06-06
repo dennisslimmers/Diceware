@@ -73,17 +73,6 @@ class ArgsParser:
         return self.generator_options
 
     def show_help(self):
-        help_msg = """Diceware passphrase generator
-        
-arguments: 
-    --help       shows argument list and exits
-    --version    shows application version and exits
-    -h           hashes the generated passphrase with bcrypt
-    -s           seperates the words with dashes (-)
-    -u           capitalizes the passphrase
-    -n INT       amount of dice rolls (words)
-    -l [NL, EN]  dictionary language
-    -log         log the passphrase to a log file"""
-
+        help_msg = open("./../help.txt", "r").read() # Read the help message from the help.txt file
         print(help_msg)
                 
