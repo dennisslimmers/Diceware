@@ -11,7 +11,7 @@ class DictReader:
             print(lang + " is not a supported language!")
             exit(0)
 
-        dict_name = "../dictionary/diceware_dict_" + lang + ".txt"
+        dict_name = "./dictionary/diceware_dict_" + lang + ".txt"
         file = open(dict_name, "r")
         lines = file.readlines()
 

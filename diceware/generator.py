@@ -1,6 +1,6 @@
 import os, sys, bcrypt
 from random import SystemRandom
-from reader.dictreader import DictReader
+from diceware.dictreader import DictReader
 
 class Generator:
     def __init__(self, options, dictreader):

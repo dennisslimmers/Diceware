@@ -1,9 +1,11 @@
 import os, sys, datetime, pyperclip
-from reader.dictreader import DictReader
-from args.argsparser import ArgsParser
-from generator.generator import Generator
-from logging.timer import Timer
-from logging.logger import Logger
+from diceware.dictreader import DictReader
+from diceware.argsparser import ArgsParser
+from diceware.generator import Generator
+from diceware.timer import Timer
+from diceware.logger import Logger
+
+from diceware.argsparser import ArgsParser
 
 def log(logger, datetime, passphrase):
     logger.write(datetime, passphrase)
