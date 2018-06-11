@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os, sys, datetime, pyperclip
 from diceware.dictreader import DictReader
 from diceware.argsparser import ArgsParser
