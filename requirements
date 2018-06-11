@@ -1,0 +1,14 @@
+pip
+    - bcrypt
+    - pyperclip
+
+# You may get an error saying that pyperclip could not find a copy/paste mechanism for your system.
+# In that case, try installing these dependencies
+
+linux
+    - xsel
+    - xclip
+
+pip 
+    - gtk
+    - PyQt4

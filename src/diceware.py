@@ -1,4 +1,4 @@
-import os, sys, datetime
+import os, sys, datetime, pyperclip
 from reader.dictreader import DictReader
 from args.argsparser import ArgsParser
 from generator.generator import Generator
@@ -7,6 +7,7 @@ from logging.logger import Logger
 
 def log(logger, datetime, passphrase):
     logger.write(datetime, passphrase)
+
 
 def init():
     argsparser = ArgsParser(sys.argv)
@@ -18,6 +19,8 @@ def init():
 
     gen = Generator(options, reader)
     passphrase = gen.generate_passphrase()
+    
+    pyperclip.copy(passphrase) # Copy the passphrase to the users clipboard
 
     print('''
      ____  _                                 
@@ -31,6 +34,7 @@ def init():
     print(timer.stop())
     print(timer.elapsed())
     print("\nPassphrase: " + str(passphrase))
+    print("The passphrase is copied to your clipboard, press CTRL + V to paste")
     
     if (options.get("-log")):
         logger = Logger()

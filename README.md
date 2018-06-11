@@ -17,6 +17,7 @@ Finished generating at: 2018-04-09 20:59:01.306351
 Elapsed generation time: 0.001173s
 
 Passphrase: Aussiedeckkaternboottebasakelei
+The passphrase is copied to your clipboard, press CTRL + V to paste
 ```  
 
 # Optional arguments
